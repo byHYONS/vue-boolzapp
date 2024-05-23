@@ -146,8 +146,8 @@ const contacts = [
         ],
     },
     {
-        name: 'Graziano',
-        avatar: './img/avatar_8.jpg',
+        name: 'Paola',
+        avatar: './img/avatar_6.jpg',
         visible: true,
         messages: [
             {
@@ -169,7 +169,7 @@ const contacts = [
     },
 ];
 
-console.log(contacts.length);
+
 
 const {createApp} = Vue;
 
@@ -182,10 +182,17 @@ createApp({
     data() {
        return {
         contacts,
-
+        currentContact: 0,
        }
     },
     methods: {
+        listContacts(){
+            return this.contacts
+        },
+        selectedContact(index){
+            console.log('contact', index)
+            this.currentContact = index
+        }
         
     },
 }).mount('#app');
