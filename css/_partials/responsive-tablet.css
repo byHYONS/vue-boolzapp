@@ -1,0 +1,59 @@
+/* ---------------------------------
+        *** RESPONSIVE ***
+---------------------------------- */
+
+   /* ************************* 
+            TABLET 
+   ************************* */
+@media screen and (min-width: 768px) {
+         /* *** DEBUG  *** */
+    .debug header::before {
+        content: 'TABLET';
+        background-color: lawngreen;
+    }
+            /* FINE */
+
+        /* *** ???  *** */
+
+    /* .list .desktop {display: none;} */
+    #notification {display: none;}
+    #research {display: none;}
+    .desktop {display: none;}
+
+    .list {display: flex; flex-direction: column;}
+
+    .chat__top i {display: inline-block;}
+
+
+    .content__message i.fas {
+        display: block;
+        font-size: 1.5625rem;
+        color: var(--color-icon-bottom-bar);
+        cursor: pointer;
+    }
+    
+    .container {max-height: max-content;}
+    
+    .content__message input {
+        width: 80%;
+        height: 60%;
+        border: none;
+    }
+
+    p.user__info { display: block;}
+
+    
+
+            /* FINE */
+
+
+}
+
+
+        
+
+/* ------------------------------
+            *** FINE ***
+------------------------------- */
+
+

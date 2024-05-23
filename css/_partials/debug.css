@@ -1,0 +1,21 @@
+/* ------------------------------
+    ************************* 
+            DEBUG
+    ************************* 
+------------------------------ */
+
+.debug header::before {
+    content: 'MOBILE';
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: blue;
+    color: white;
+    padding: 15px 25px;
+    }
+    
+.debug .content:empty {height: 350px;}
+    
+    
+            /* FINE  */
+    

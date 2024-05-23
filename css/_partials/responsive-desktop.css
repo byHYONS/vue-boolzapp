@@ -1,0 +1,99 @@
+/* ---------------------------------
+         *** RESPONSIVE ***
+---------------------------------- */
+
+   /* *************************** 
+                DESKTOP
+   **************************** */
+        /* *** DEBUG  *** */
+@media screen and (min-width: 992px) {
+    .debug header::before {
+        content: 'DESKTOP';
+        background-color: orange;
+    }
+            /* FINE */
+    
+        /* *** ???  *** */
+
+
+            /* FINE */
+
+    #notification {display: flex;}
+     #research {display: flex;}
+    .desktop {display: block;}
+            
+    .list {
+        display: flex; 
+        flex-direction: column; 
+        width: 40%;
+        /* overflow: hidden; */
+    }
+
+    /* .list .desktop {display: block;} */
+
+    .tools i {display: inline-block;}
+
+
+    .chat {width: 60%;}
+
+    main {display: flex;}
+    
+    .container {
+        width: 90%;
+        height: 95%;
+        margin: auto;
+    }    
+
+    .content__message i.fas {
+        display: block;
+        font-size: 1.5625rem;
+        color: var(--color-icon-bottom-bar);
+    }
+    
+    
+    .content__message input {
+        width: 80%;
+        height: 60%;
+        border: none;
+    }
+
+
+}
+
+
+
+
+   /* ***********************
+        DESKTOP LARGE
+   *********************** */
+
+@media screen and (min-width: 1200px) {
+    .debug header::before {
+        content: 'DESKTOP LARGE';
+        background-color: red;
+        }
+
+    .container {max-width: 1200px;}
+
+    .container {
+        width: 88%;
+        height: 95%;
+        margin: auto;
+    }
+
+    .list {display: flex; flex-direction: column; width: 35%;}
+    .chat {width: 65%;}
+
+}
+
+
+        /* FINE  */
+
+/* ------------------------------
+          *** FINE ***
+------------------------------- */
+
+
+
+   
+   

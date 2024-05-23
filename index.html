@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>BoolZapp</title>
+</head>
+<body class="debug">
+    <!-- BICOLORE DI BACKGROUNG -->
+    <header></header>
+    <main>
+        <div id="app" class="container bg-black"
+        v-cloak >
+            <!-- CONTENITORE CENTRATO ALLA VIEWPORT -->
+            <div class="row">
+                <!-- COLONNA DI SINISTRA PER TABLET & DESKTOP -->
+                    <div class="list">
+                        <div class="list__top">
+                            <!-- FOTO AVATAR -->
+                            <figure class="user__avatar">
+                                <img src="./img/avatar_8.jpg" alt="avatar_1">
+                            </figure>
+                            <!-- STRUMENTI & IMPOSTAZIONI -->
+                            <div class="tools">
+                               <i class="fas fa-circle-notch"></i>     
+                               <i class="fas fa-message"></i>     
+                               <i class="fas fa-ellipsis-vertical"></i>     
+                            </div>
+                        </div>
+                        <!-- CONTENITORE DELLE NOTIFICHE -->
+                        <div id="notification" class="list__notification px-15">
+                            <span><i class="fas fa-bell-slash"></i></span>
+                            <div class="desktop ml-5">
+                                <p>Ricevi notifiche di nuovi messaggi</p>
+                                <a href="x">Attiva notifiche di desktop</a>
+                            </div>
+                        </div>
+                        <!-- BARRA DI RICERCA -->
+                        <div id="research" class="list__research d-flex ai-center">
+                            <span><i class="fab fa-sistrix"></i></span>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                        <!-- LISTA NOMI USER -->
+                        <div class="list__user">
+                            <ul class="list__user"
+                            v-for="(contact, index) in contacts" :key="`contact-${index}`">
+                                <!-- LIST ITEM COMPLETO DI FOTO + INFO -->
+                                <li class="list__user">
+                                    <div class="list__user__content">
+                                        <!-- FOTO USER -->
+                                        <figure class="user__avatar">
+                                            <img :src="contact.avatar" :alt="contact.name">
+                                            <!-- NOME USER + INFO ACCESSO -->
+                                            <div class="user__name desktop">
+                                                <h2>{{contact.name}}</h2>
+                                                <p class="user__info">Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </figure>
+                                        <!-- ORARIO MESSAGGIO -->
+                                        <div class="hour-sms desktop mb-15">
+                                            <p>07:07</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- fine list item -->
+                               
+                            </ul>
+                        </div>
+                    </div>
+                <!-- COLONNA DI DESTRA PER TUTTI I DEVICE • CHAT SECTION -->
+                    <!-- CONTENITORE CHAT -->
+                <div class="chat">
+                    <!-- TOP BAR -->
+                    <div class="chat__top">                            
+                        <!-- FOTO CHAT -->
+                        <figure class="user__avatar">
+                            <img src="./img/avatar_1.jpg" alt="avatar_1">
+                            <!-- NOME CHAT + INFO ACCESSO -->
+                            <div class="user__name">
+                                <h2>Samuele</h2>
+                                <p class="user__info">Ultimo accesso oggi alle 15:15</p>
+                            </div>
+                        </figure>
+                        <!-- STRUMENTI DELLA CHAT -->
+                        <div class="tools">
+                            <i class="fab fa-sistrix"></i>     
+                            <i class="fas fa-paperclip"></i>     
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </div>                            
+                    </div>
+                    <!-- CONTENUTO DELLA CHAT -->
+                    <div class="content__chat pdg-25 ovf-auto">
+                        <ul>
+                            <li id="text-in" class="content__text-area content__text-area__in mb-15">
+                                <!-- MESSAGGI IN INGRESSO -->
+                                <div class="text-area__in">
+                                    <p class="pdg-20">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo nostrum vero sequi voluptates? Repellendus, doloremque.</p>
+                                </div>
+                                <div class="text-area__info">
+                                    <i class="fas fa-angle-down"></i>
+                                    <span class="hour">15.15</span>
+                                </div>                 
+                            </li>
+                            <li id="text-out" class="content__text-area content__text-area__out mb-15">
+                                <!-- MESSAGGI IN USCITA -->                            
+                                <div id="text-in" class="text-area__out">
+                                    <p class="pdg-20">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo nostrum vero sequi voluptates? Repellendus, doloremque.</p>
+                                </div>
+                                <div class="text-area__info">
+                                    <i class="fas fa-angle-down"></i>
+                                    <span class="hour">15.15</span>
+                                </div>                            
+                            </li>
+                        </ul>                                                        
+                    </div>
+                    <!-- AREA TEXT PER SCRIVERE I MESSAGGI -->
+                    <div class="content__message">
+                        <i class="fas fa-face-grin"></i>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <!-- /AREA TEXT PER SCRIVERE I MESSAGGI -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <!-- vue js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- /vue js -->
+    <!-- project js -->
+    <script type="text/javascript" src="./main.js"></script>
+    <!-- /project js -->
+</body>
+</html>
