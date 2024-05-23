@@ -98,7 +98,8 @@
                     <!-- CONTENUTO DELLA CHAT-->
                     <div class="content__chat pdg-25 ovf-auto">
                         <ul v-for="(chat, index) in contacts[currentContact].messages" :key="`chat-${index}`">
-                            <li id="text-in" class="content__text-area mb-15" :class="chat.status === 'received' ? 'content__text-area__in' : 'content__text-area__out'">
+                            <li id="text-in" class="content__text-area mb-15" 
+                            :class="chat.status === 'received' ? 'content__text-area__in' : 'content__text-area__out'">
                                 <!-- MESSAGGI IN INGRESSO E USCITA -->
                                 <div class="text-area__in">
                                     <p class="pdg-20">{{chat.message}}</p>
