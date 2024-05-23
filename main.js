@@ -261,8 +261,9 @@ createApp({
             }, 2_000);
         },
         // aprire modale per info chat e elimina messagge:
-        infoChat(){
+        infoChat(index){
             console.log('stai pigiano');
+            console.log(index);
             this.classOn = !this.classOn;
         },
         // aprire tendina contatti:
