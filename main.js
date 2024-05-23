@@ -209,7 +209,8 @@ createApp({
         currentContact: 0,  // contatto di defoult
         textArea: '',   // area per scrivere un messaggio
         searchContact: '',  // area per la ricerca contati
-        classOpen: false,
+        classOpen: false,   // modalità mobile apre lista contatti
+        classOn: false,    // per arpire modale messaggi
        }
     },
     methods: {
@@ -258,6 +259,11 @@ createApp({
                     status: 'received'
                 });
             }, 2_000);
+        },
+        // aprire modale per info chat e elimina messagge:
+        infoChat(){
+            console.log('stai pigiano');
+            this.classOn = !this.classOn;
         },
         // aprire tendina contatti:
         openContact(){

@@ -214,7 +214,7 @@ figure.user__avatar {
 
 .content__text-area p {color: var(--color-text-primary);}
 
-.text-area__info i, .text-area__info span {padding: .625rem; color: var(--color-text-secondary);}
+.text-area__info i, .text-area__info span {padding: .625rem; color: var(--color-text-secondary); position: relative;}
 
 .text-area__info span {font-size: .75rem;}
 
@@ -260,6 +260,42 @@ figure.user__avatar {
     color: var(--color-text-message);
 }
 
+.fa-angle-down {
+    cursor: pointer;
+}
+
+
+
+
+
+i .info-chat {
+    display: none;
+    font-family: 'Lato', sans-serif; 
+    position: absolute;
+    right: 0;
+    min-width: 180px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    z-index: 5;
+}
+
+.info-chat p {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: lowercase;
+    padding: 8px;
+}
+
+.info-chat p:hover {
+    background-color: #464646;
+    color: #fff;
+    border-radius: 5px;
+}
+
+i .info-chat-on {
+    display: block;
+}
 
 
 .openConctact {
