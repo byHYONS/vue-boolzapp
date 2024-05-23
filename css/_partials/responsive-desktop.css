@@ -42,7 +42,7 @@
         width: 90%;
         height: 95%;
         margin: auto;
-    }    
+    } 
 
     .content__message i.fas {
         display: block;
@@ -55,6 +55,10 @@
         width: 80%;
         height: 60%;
         border: none;
+    }
+
+    i.fa-angle-right {
+        display: none;
     }
 
 

@@ -235,6 +235,13 @@ figure.user__avatar {
 /* NON VISIBILE SU MOBILE */
 .content__message i.fas {display: none;}
 
+.fa-angle-right {
+    display: block;
+    font-size: 35px;
+    margin: auto;
+    cursor: pointer; 
+    padding-right: 20px; 
+}
 
 .content__message input {
     width: 95%;
@@ -251,6 +258,14 @@ figure.user__avatar {
 .list__research input::placeholder {
     font-size: .9375rem;
     color: var(--color-text-message);
+}
+
+
+
+.openConctact {
+    display: block;
+    position: absolute;
+    flex-shrink: 0;
 }
 
 /* ------------------------------

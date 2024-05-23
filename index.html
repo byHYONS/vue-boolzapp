@@ -19,7 +19,8 @@
             <!-- CONTENITORE CENTRATO ALLA VIEWPORT -->
             <div class="row">
                 <!-- COLONNA DI SINISTRA PER TABLET & DESKTOP -->
-                    <div class="list">
+                    <div class="list"
+                    :class="{'openConctact': classOpen}">
                         <div class="list__top">
                             <!-- FOTO AVATAR -->
                             <figure class="user__avatar">
@@ -82,6 +83,8 @@
                     <div class="chat__top">                            
                         <!-- FOTO CHAT -->
                         <figure class="user__avatar">
+                            <i class="fas fa-angle-right"
+                            @click="openContact()"></i>
                             <img :src="contacts[currentContact].avatar" alt="avatar_1">
                             <!-- NOME CHAT + INFO ACCESSO -->
                             <div class="user__name">

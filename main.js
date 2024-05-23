@@ -209,6 +209,7 @@ createApp({
         currentContact: 0,  // contatto di defoult
         textArea: '',   // area per scrivere un messaggio
         searchContact: '',  // area per la ricerca contati
+        classOpen: false,
        }
     },
     methods: {
@@ -258,6 +259,10 @@ createApp({
                 });
             }, 2_000);
         },
+        // aprire tendina contatti:
+        openContact(){
+            this.classOpen = true;
+        }
         
     },
 }).mount('#app');
