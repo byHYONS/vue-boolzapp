@@ -173,14 +173,21 @@ const contacts = [
     genero una risposta
           random
 ************************* */
+// array di risposte:
+const answers = ['ciao, va bene', 'Ok!', 'Ti chiamo dopo, ora ho da fare', 
+'Ciao, ok... possiamo parlarne meglio questa sera?', 'Ooh, stavo pensando di chiamarti...', 
+'Ciaooo, per me va bene... sentiamoci dopo!', 'Non lo so, ci devo pensare', 'Ok, a più tardi',
+'Ciao, ora non posso, me se per te va bene potremmo fare domani... che dici?', 'Ciao, penso proprio di no...'];
 
-const answers = ['ciao, va bene', 'Ok!', 'Ti chiamo dopo, ora ho da fare', 'Ciao, ok... possiamo parlarne meglio questa sera?', 'Ooh, stavo pensando di chiamarti...', 'Ciaooo, per me va bene... sentiamoci dopo!'];
+console.log(answers.length);
 
+// definisco funzione per generare un numero random:
 function genRandom(min, max){
    const n = Math.floor(Math.random() * (max - min +1)) + min;
    return n;
 };
 
+// definisco una funzione per pescare random una risposta:
 function messageAnswer(){
 const answer = answers[genRandom(0, answers.length - 1)];
 console.log(answer);
@@ -197,24 +204,36 @@ const {createApp} = Vue;
 createApp({
     data() {
        return {
-        contacts,
-        messageAnswer,
-        currentContact: 0,
-        textArea: '',
+        contacts,   // array di oggetti
+        messageAnswer,  // messaggi random
+        currentContact: 0,  // contatto di defoult
+        textArea: '',   // area per scrivere un messaggio
+        searchContact: '',  // area per la ricerca contati
        }
     },
     methods: {
-        listContacts(){
-            return this.contacts
+        // funzione per mostrare la lista contatti, che verrà modificata in caso di ricerca:
+        listContacts() {
+            if (this.searchContact) {
+                const searchLower = this.searchContact.toLowerCase();
+                return this.contacts.filter(element => {
+                    return element.name.toLowerCase().includes(searchLower);
+                });
+            } else {
+                return this.contacts;
+            }
         },
+        // funzione per determinare il contatto corrente:
         selectedContact(index){
             console.log('contact', index)
             this.currentContact = index
         },
+        // funzione per l'invio e la ricezione dei messaggi:
         messageSent(){
             this.messageOut();
             this.messageIn();
         },
+        // funzione per i messaggi in uscita:
         messageOut(){
             console.log(this.contacts[this.currentContact].messages);
             // valido la textArea prima di fare push dentro l'array:
@@ -226,10 +245,10 @@ createApp({
                     status: 'sent'
                 })
             };
-            // cencello la textArea:
-            this.textArea = '';
+            this.textArea = '';    // cencello la textArea:
 
         },
+        // funzione per l'invio random dei messaggi:
         messageIn(){
             setTimeout(() => {
                 this.contacts[this.currentContact].messages.push({
