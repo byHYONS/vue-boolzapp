@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>BoolZapp</title>
 </head>
-<body class="debug">
+<body class="">
     <!-- BICOLORE DI BACKGROUNG -->
     <header></header>
     <main>
@@ -114,7 +114,11 @@
                     <!-- AREA TEXT PER SCRIVERE I MESSAGGI -->
                     <div class="content__message">
                         <i class="fas fa-face-grin"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" v-model="textArea"
+                        @keypress.enter="messageSent()"
+                        placeholder="Scrivi un messaggio">
+                        <i class="fas fa-paper-plane sent"
+                        @click="messageSent()"></i>
                         <i class="fas fa-microphone"></i>
                     </div>
                     <!-- /AREA TEXT PER SCRIVERE I MESSAGGI -->

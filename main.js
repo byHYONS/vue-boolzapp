@@ -113,7 +113,7 @@ const contacts = [
         messages: [
             {
                 date: '10/01/2020 15:30:55',
-                message: 'Ciao Marsela, hai novità?',
+                message: 'Ciao Elisa, hai novità?',
                 status: 'sent'
             },
             {
@@ -169,20 +169,38 @@ const contacts = [
     },
 ];
 
+/* *************************
+    genero una risposta
+          random
+************************* */
 
+const answers = ['ciao, va bene', 'Ok!', 'Ti chiamo dopo, ora ho da fare', 'Ciao, ok... possiamo parlarne meglio questa sera?', 'Ooh, stavo pensando di chiamarti...', 'Ciaooo, per me va bene... sentiamoci dopo!'];
 
-const {createApp} = Vue;
+function genRandom(min, max){
+   const n = Math.floor(Math.random() * (max - min +1)) + min;
+   return n;
+};
+
+function messageAnswer(){
+const answer = answers[genRandom(0, answers.length - 1)];
+console.log(answer);
+return answer;
+};
 
 /* *************************
-    inizializzo oggetto
-           vuejs
+inizializzo oggetto
+vuejs
 ************************* */
+
+const {createApp} = Vue;
 
 createApp({
     data() {
        return {
         contacts,
+        messageAnswer,
         currentContact: 0,
+        textArea: '',
        }
     },
     methods: {
@@ -192,7 +210,35 @@ createApp({
         selectedContact(index){
             console.log('contact', index)
             this.currentContact = index
-        }
+        },
+        messageSent(){
+            this.messageOut();
+            this.messageIn();
+        },
+        messageOut(){
+            console.log(this.contacts[this.currentContact].messages);
+            // valido la textArea prima di fare push dentro l'array:
+            if (!this.textArea) return;
+            if (typeof this.textArea === 'string' && /\S/.test(this.textArea)){
+                this.contacts[this.currentContact].messages.push({
+                    date: '10/01/2020 15:50:00',
+                    message: this.textArea.trim(),
+                    status: 'sent'
+                })
+            };
+            // cencello la textArea:
+            this.textArea = '';
+
+        },
+        messageIn(){
+            setTimeout(() => {
+                this.contacts[this.currentContact].messages.push({
+                    date: '10/01/2020 15:50:00',
+                    message: this.messageAnswer(),
+                    status: 'received'
+                });
+            }, 2_000);
+        },
         
     },
 }).mount('#app');

@@ -200,10 +200,10 @@ figure.user__avatar {
 }
 
 
-.content__text-area__in {background-color: var(--color-message-out); align-self: flex-end;}
+.content__text-area__out {background-color: var(--color-message-out); align-self: flex-end;}
 
 
-.content__text-area__out {background-color: var(--color-message-in);align-self: flex-start}
+.content__text-area__in {background-color: var(--color-message-in);align-self: flex-start}
 
 .text-area__info {
     display: flex;
