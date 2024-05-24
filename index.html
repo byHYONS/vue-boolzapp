@@ -17,6 +17,7 @@
         <div id="app" class="container bg-black"
         v-cloak >
             <!-- CONTENITORE CENTRATO ALLA VIEWPORT -->
+            
             <div class="row">
                 <!-- COLONNA DI SINISTRA PER TABLET & DESKTOP -->
                     <div class="list"
@@ -115,7 +116,7 @@
                                         :class="{'info-chat-on': classOn === index}">
                                         <!-- apre la modale dello stesso indice in cui si è cliccato -->
                                             <p>Info Chat</p>
-                                            <p @click="deleteMessage(currentContact, index)"
+                                            <p @click.stop="deleteMessage(currentContact, index)"
                                             >Elimina Messaggio</p>
                                         </div>
                                     </i>

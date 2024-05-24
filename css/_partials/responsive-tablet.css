@@ -15,14 +15,22 @@
 
         /* *** ???  *** */
 
-    /* .list .desktop {display: none;} */
+    i .info-chat-on {display: none;}
+
+    .list .desktop {display: none;}
     #notification {display: none;}
     #research {display: none;}
     .desktop {display: none;}
 
-    .list {display: flex; flex-direction: column;}
+    .list {
+        transform: translate(0);
+        display: flex; 
+        flex-direction: column;
+        position: static;
+    
+    }
 
-    .chat__top i {display: inline-block;}
+    /* .chat__top i {display: inline-block;} */
 
 
     .content__message i.fas {
