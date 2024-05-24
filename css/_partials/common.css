@@ -201,7 +201,6 @@ figure.user__avatar {
 
 .content__text-area__out {background-color: var(--color-message-out); align-self: flex-end;}
 
-
 .content__text-area__in {background-color: var(--color-message-in);align-self: flex-start}
 
 .text-area__info {
@@ -270,14 +269,21 @@ figure.user__avatar {
 i .info-chat {
     display: none;
     font-family: 'Lato', sans-serif; 
-    position: absolute;
-    right: 0;
     min-width: 180px;
     background-color: #fff;
     padding: 15px;
     border-radius: 6px;
     box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
     z-index: 5;
+}
+.info-chat-left {
+    position: absolute;
+    left: 0; 
+}
+  
+.info-chat-right {
+    position: absolute;
+    right: 0; 
 }
 
 .info-chat p {
@@ -303,13 +309,15 @@ i .info-chat-on {
 /* lista contatti da mobile */
 
 .list {
-    transform: translate(-100%) ;
+    background-color: #eaeaea;
+    transform: translate(-100%);
     display: flex;
     flex-direction: column;
     position: absolute;
     flex-shrink: 0;
     z-index: 5;
-    transition: 1s;
+    transition: 0.5s;
+    
 }
 
 .openConctact {
@@ -320,5 +328,3 @@ i .info-chat-on {
 /* ------------------------------
          *** FINE ***
 ------------------------------- */
-
-

@@ -17,7 +17,7 @@
         <div id="app" class="container bg-black"
         v-cloak >
             <!-- CONTENITORE CENTRATO ALLA VIEWPORT -->
-            
+
             <div class="row">
                 <!-- COLONNA DI SINISTRA PER TABLET & DESKTOP -->
                     <div class="list"
@@ -46,15 +46,16 @@
                         <div id="research" class="list__research d-flex ai-center">
                             <span><i class="fab fa-sistrix"></i></span>
                             <input type="text" placeholder="Cerca contatto"
-                            v-model="searchContact">
+                            v-model="searchContact" @keyup="listContacts">
                         </div>
                         <!-- LISTA NOMI USER -->
                         <div class="list__user">
-                            <ul class="list__user"
-                            v-for="(contact, index) in listContacts()" :key="`contact-${index}`">
+                            <ul class="list__user" >
                                 <!-- LIST ITEM COMPLETO DI FOTO + INFO -->
                                 <li class="list__user"
-                                @click="selectedContact(index)">
+                                @click="selectedContact(index)"
+                                v-show="contact.visible"
+                            v-for="(contact, index) in contacts" :key="`contact-${index}`">
 
                                     <div class="list__user__content">
                                         <!-- FOTO USER -->
@@ -113,10 +114,12 @@
                                     <i class="fas fa-angle-down"
                                     @click="infoChat(index)">
                                         <div class="info-chat"
-                                        :class="{'info-chat-on': classOn === index}">
+                                        :class="{'info-chat-on': classOn === index,
+                                        'info-chat-left': chat.status === 'received', 
+                                        'info-chat-right': chat.status === 'sent'}">
                                         <!-- apre la modale dello stesso indice in cui si è cliccato -->
                                             <p>Info Chat</p>
-                                            <p @click.stop="deleteMessage(currentContact, index)"
+                                            <p @click.stop="deleteMessage(index)"
                                             >Elimina Messaggio</p>
                                         </div>
                                     </i>

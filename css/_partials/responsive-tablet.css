@@ -13,9 +13,7 @@
     }
             /* FINE */
 
-        /* *** ???  *** */
-
-    
+        /* *** ???  *** */   
 
     .list .desktop {display: none;}
     #notification {display: none;}
@@ -23,15 +21,14 @@
     .desktop {display: none;}
 
     .list {
-        transform: none;
         display: flex; 
         flex-direction: column;
         position: static;
-    
+        transform: none;
+        transition: none;
     }
 
-    /* .chat__top i {display: inline-block;} */
-
+    .openContat {transform: none;}
 
     .content__message i.fas {
         display: block;
@@ -54,15 +51,9 @@
         display: none;
     }
 
-    
-
             /* FINE */
 
-
-}
-
-
-        
+}        
 
 /* ------------------------------
             *** FINE ***

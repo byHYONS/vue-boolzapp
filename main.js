@@ -218,15 +218,17 @@ createApp({
     methods: {
         // funzione per mostrare la lista contatti, che verrà modificata in caso di ricerca:
         listContacts() {
-            if (this.searchContact) {
-                const searchLower = this.searchContact.toLowerCase();
-                return this.contacts.filter(element => {
-                    return element.name.toLowerCase().includes(searchLower);
-                    
+            // if (this.searchContact) {
+                const searchLower = this.searchContact.toLowerCase().trim();
+                console.log(searchLower);
+                return this.contacts.forEach(element => {
+                    if(element.name.toLowerCase().includes(searchLower)) { 
+                        element.visible = true
+                    } else {
+                        element.visible = false
+                    }
                 });
-            } else {
-                return this.contacts;
-            }
+            // }
         },
         // funzione per determinare il contatto corrente:
         selectedContact(index){
@@ -237,6 +239,7 @@ createApp({
         },
         // funzione per l'invio e la ricezione dei messaggi:
         messageSent(){
+            if (!this.textArea) return;
             this.messageOut();
             this.messageIn();
         },
@@ -277,14 +280,14 @@ createApp({
                 this.classOn = index;
             }
         },
-        deleteMessage(cntIndex, msgIndex){
-            this.contacts[cntIndex].messages.splice(msgIndex, 1);
+        deleteMessage(msgIndex){
+            this.contacts[this.currentContact].messages.splice(msgIndex, 1);
             this.classOn = null;
         },
         // aprire tendina contatti:
         openContact(){
             this.classOpen = true;
-        }
+        },      
         
     },
 }).mount('#app');
