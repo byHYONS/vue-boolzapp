@@ -269,12 +269,16 @@ createApp({
             console.log('stai pigiano');
             console.log(index);
             console.log(this.classOn);
-            
+            // classOn devo riassegnare il valore uguale all'indice:
             if (this.classOn === index) {
                 this.classOn = null;
             } else {
                 this.classOn = index;
             }
+        },
+        deleteMessage(cntIndex, msgIndex){
+            this.contacts[cntIndex].messages.splice(msgIndex, 1);
+            this.classOn = null;
         },
         // aprire tendina contatti:
         openContact(){

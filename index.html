@@ -113,8 +113,10 @@
                                     @click="infoChat(index)">
                                         <div class="info-chat"
                                         :class="{'info-chat-on': classOn === index}">
+                                        <!-- apre la modale dello stesso indice in cui si è cliccato -->
                                             <p>Info Chat</p>
-                                            <p>Elimina Messaggio</p>
+                                            <p @click="deleteMessage(currentContact, index)"
+                                            >Elimina Messaggio</p>
                                         </div>
                                     </i>
                                     <span class="hour">15.15</span>
