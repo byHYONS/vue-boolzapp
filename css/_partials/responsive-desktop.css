@@ -19,14 +19,24 @@
             /* FINE */
 
     #notification {display: flex;}
-     #research {display: flex;}
-    .desktop {display: block;}
-            
+    #research {display: flex;}
+
+     
+    .list .desktop {display: block;}
+
     .list {
         display: flex; 
         flex-direction: column; 
         width: 40%;
         /* overflow: hidden; */
+    }
+
+    .list {
+        transform: translate(0);
+        display: flex; 
+        flex-direction: column;
+        position: static;
+    
     }
 
     /* .list .desktop {display: block;} */
@@ -57,9 +67,6 @@
         border: none;
     }
 
-    i.fa-angle-right {
-        display: none;
-    }
 
 
 }

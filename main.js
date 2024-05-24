@@ -233,6 +233,7 @@ createApp({
             console.log('contact', index)
             this.currentContact = index
             this.classOn = null;
+            this.classOpen = false; // in mobile chiude lista contatti
         },
         // funzione per l'invio e la ricezione dei messaggi:
         messageSent(){

@@ -15,7 +15,7 @@
 
         /* *** ???  *** */
 
-    i .info-chat-on {display: none;}
+    
 
     .list .desktop {display: none;}
     #notification {display: none;}
@@ -23,7 +23,7 @@
     .desktop {display: none;}
 
     .list {
-        transform: translate(0);
+        transform: none;
         display: flex; 
         flex-direction: column;
         position: static;
@@ -49,6 +49,10 @@
     }
 
     p.user__info { display: block;}
+
+    i.fa-angle-right {
+        display: none;
+    }
 
     
 
