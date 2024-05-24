@@ -169,6 +169,8 @@ const contacts = [
     },
 ];
 
+
+
 /* *************************
     genero una risposta
           random
@@ -210,7 +212,7 @@ createApp({
         textArea: '',   // area per scrivere un messaggio
         searchContact: '',  // area per la ricerca contati
         classOpen: false,   // modalità mobile apre lista contatti
-        classOn: false,    // per arpire modale messaggi
+        classOn: null,    // per arpire modale messaggi
        }
     },
     methods: {
@@ -220,6 +222,7 @@ createApp({
                 const searchLower = this.searchContact.toLowerCase();
                 return this.contacts.filter(element => {
                     return element.name.toLowerCase().includes(searchLower);
+                    
                 });
             } else {
                 return this.contacts;
@@ -229,6 +232,7 @@ createApp({
         selectedContact(index){
             console.log('contact', index)
             this.currentContact = index
+            this.classOn = null;
         },
         // funzione per l'invio e la ricezione dei messaggi:
         messageSent(){
@@ -264,7 +268,13 @@ createApp({
         infoChat(index){
             console.log('stai pigiano');
             console.log(index);
-            this.classOn = !this.classOn;
+            console.log(this.classOn);
+            
+            if (this.classOn === index) {
+                this.classOn = null;
+            } else {
+                this.classOn = index;
+            }
         },
         // aprire tendina contatti:
         openContact(){
